@@ -1,0 +1,138 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Codelab: Instalar tu primera proxi en Linux</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="proxi-linux"
+                  title="Codelab: Instalar tu primera proxi en Linux"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Objetivo" duration="0">
+        <p>En este codelab, aprenderás cómo instalar tu primera proxi en Linux. <img alt="image_caption" src="img\\4936980fafb7bde4.jpg"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sección 1: Instalar Squid" duration="5">
+        <ol type="1">
+<li>Ejecutar el siguiente comando en la terminal para instalar Squid3:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   sudo apt-get install squid3
+</code></pre>
+<ol type="1" start="2">
+<li>Verificar la instalación:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   squid -v
+</code></pre>
+<ol type="1" start="3">
+<li>Actualizar la lista de paquetes disponibles:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   sudo sudo apt-get update
+</code></pre>
+<ol type="1" start="4">
+<li>Descargar archivo Squid reconfigurado: <a href="https://github.com/maomunozz/Codelabs/blob/main/squid.conf" target="_blank">squid.conf</a></li>
+<li>Abrir el archivo de configuración de Squid:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   sudo gedit /etc/squid/squid.conf
+   (visible_hostname) (http_port)(acl CONNECT)
+</code></pre>
+<ol type="1" start="5">
+<li>Verifica que Node.js se haya instalado correctamente abriendo tu terminal o línea de comandos y ejecutando los siguientes comandos: <ul>
+<li><code>node -v</code> para verificar la versión de Node.js.</li>
+<li><code>npm -v</code> para verificar la versión de npm (Node Package Manager).</li>
+</ul>
+</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sección 2 Configurar Squid Duration" duration="15">
+        <ol type="1">
+<li>Abrir el archivo de configuración:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   sudo gedit /etc/squid/squid.conf
+</code></pre>
+<ol type="1" start="2">
+<li>Configurar las líneas: Línea 6041: Reemplazar con tu nombre de usuario (echo $USER) Línea 1009: Reemplazar con tu dirección IP (ifconfig) Línea 1209: Reemplazar con tu dirección IP</li>
+</ol>
+<p>Guardar y cerrar el archivo</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sección 3: Reemplazar el archivo squid.conf" duration="10">
+        <ol type="1">
+<li>Ejecutar el siguiente comando en la terminal para instalar Squid3:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   cd /etc/squid
+   sudo mv squid.conf squid.conf.old
+   sudo cp /path/to/squid.conf /etc/squid
+   sudo mkdir /etc/squid/listas
+   cd listas
+   sudo touch /etc/squid/listas/denegados
+   sudo gedit denegados
+</code></pre>
+<ol type="1" start="2">
+<li>En el archivo denegados, agregar las URLs que deseas bloquear (por ejemplo, facebook.com, youtube.com)</li>
+<li>Guardar y cerrar el archivo</li>
+<li>Reiniciar el servicio Squid:</li>
+</ol>
+<pre><code language="language-bash" class="language-bash">   sudo /etc/init.d/squid restart
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sección 4: Configurar Squid Duration" duration="5">
+        <ol type="1">
+<li>Ir a Settings &gt; Network &gt; Network Proxy</li>
+<li>Seleccionar Manual</li>
+<li>Ingresar los valores del proxy configurado en squid.conf</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sección 5: Prueba" duration="5">
+        <ol type="1">
+<li>Abrir un navegador web</li>
+<li>Intentar cargar las URLs bloqueadas (por ejemplo, facebook.com)</li>
+<li>Si la configuración fue exitosa, las URLs bloqueadas no deberían cargarse</li>
+</ol>
+<p>¡Felicitaciones! Has instalado tu primera proxi en Linux</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
