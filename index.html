@@ -1,4 +1,3 @@
-
 <!doctype html>
 
 <html>
@@ -52,27 +51,17 @@
 </code></pre>
 <ol type="1" start="4">
 <li>Descargar archivo Squid reconfigurado: <a href="https://github.com/ParqueSoftTi/networking1/blob/main/squid.conf" target="_blank">squid.conf</a></li>
-<li>Abrir el archivo de configuración de Squid:</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">   sudo gedit /etc/squid/squid.conf
-   (visible_hostname) (http_port)(acl CONNECT)
-</code></pre>
-<ol type="1" start="5">
-<li>Verifica que Node.js se haya instalado correctamente abriendo tu terminal o línea de comandos y ejecutando los siguientes comandos: <ul>
-<li><code>node -v</code> para verificar la versión de Node.js.</li>
-<li><code>npm -v</code> para verificar la versión de npm (Node Package Manager).</li>
-</ul>
-</li>
-</ol>
+<p class="image-container"><img alt="image_caption" src="img\\422838251a3c4e63.jpg"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Sección 2 Configurar Squid Duration" duration="15">
         <ol type="1">
-<li>Abrir el archivo de configuración:</li>
+<li>Abrir el archivo de configuración squid.conf que se descargo en el paso anterior:</li>
 </ol>
-<pre><code language="language-bash" class="language-bash">   sudo gedit /etc/squid/squid.conf
+<pre><code language="language-bash" class="language-bash">   sudo gedit [agrega-tu-ruta-de-descarga]
 </code></pre>
 <ol type="1" start="2">
 <li>Configurar las líneas: Línea 6041: Reemplazar con tu nombre de usuario (echo $USER) Línea 1009: Reemplazar con tu dirección IP (ifconfig) Línea 1209: Reemplazar con tu dirección IP</li>
